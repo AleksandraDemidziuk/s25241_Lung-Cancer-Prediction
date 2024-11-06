@@ -100,6 +100,9 @@ i trudność w znalezieniu korelacji. <br>
 ![Korelacja 2?](Images/Corelations/Korelacje2.png) <br>
 ![Korelacja 3?](Images/Corelations/Korelacje3.png)
 
+### Wygląd projektu
+Projekt będzie przeprowadznony w poniższy sposób: <br>
+![Diagram przepływu](Images/Diagram_przeplywu.png)
 
 Na przyszłość
 import kagglehub
