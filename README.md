@@ -103,11 +103,3 @@ i trudność w znalezieniu korelacji. <br>
 ### Wygląd projektu
 Projekt będzie przeprowadznony w poniższy sposób: <br>
 ![Diagram przepływu](Images/Diagram_przeplywu.png)
-
-Na przyszłość
-import kagglehub
-
-# Download latest version
-path = kagglehub.dataset_download("rashadrmammadov/lung-cancer-prediction")
-
-print("Path to dataset files:", path)
