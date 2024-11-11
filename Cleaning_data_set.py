@@ -29,7 +29,6 @@ categorical_columns.remove('Treatment')
 # Standaryzacja danych
 scaler = StandardScaler()
 df[numeric_columns] = pd.DataFrame(scaler.fit_transform(df[numeric_columns]), columns=numeric_columns, index=df.index)
-print(df.head())
 joblib.dump(scaler, 'Encoders/scaler.pkl')
 
 # Kategoryzacja danych

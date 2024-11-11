@@ -3,3 +3,8 @@ pandas
 scikit-learn
 joblib
 numpy
+jupyter
+seaborn
+matplotlib
+missingno
+sweetviz
