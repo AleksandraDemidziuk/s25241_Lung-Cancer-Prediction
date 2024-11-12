@@ -4,6 +4,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.model_selection import train_test_split
 import joblib
+import sweetviz as sv
 
 # Pobieranie danych
 path = kagglehub.dataset_download("rashadrmammadov/lung-cancer-prediction")
@@ -13,6 +14,10 @@ path += "\lung_cancer_data.csv"
 df = pd.read_csv(path)
 print(df.head())
 print(df.shape)
+
+# Raport automatyczny
+report = sv.analyze(df)
+report.show_html("Data_analyzes/sweetviz_report_full_data.html", open_browser=False)
 
 # Poprawienie danych
 if df.isnull().values.any():
@@ -38,6 +43,10 @@ for column in categorical_columns:
     joblib.dump(label_encoder, 'Encoders/label_encode{}.pkl'.format(column))
 
 train, test = train_test_split(df, test_size=0.3)
+
+# Raport automatyczny porównawczy
+report = sv.compare(train, test)
+report.show_html("Data_analyzes/sweetviz_report_test_train_comparison.html", open_browser=False)
 
 # Zapisz do pliku CSV
 train.to_csv("Data_sets/train_data.csv", index=False)

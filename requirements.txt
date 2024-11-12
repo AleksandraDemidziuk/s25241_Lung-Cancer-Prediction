@@ -8,4 +8,4 @@ seaborn==0.13.2
 matplotlib==3.10.0rc1
 missingno==0.5.2
 autoviz
-sweetviz
+sweetviz==2.3.1

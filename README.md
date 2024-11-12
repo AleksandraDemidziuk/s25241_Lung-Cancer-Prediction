@@ -14,7 +14,7 @@ użtku publicznego.
 
 **Opis zbioru danych** <br>
 Posiada on 38 kolumn:
-- Patient_ID
+- Patient_ID {usunięta ze względu na bycie id wiersza}
 - Wartości kategorialne:
   - Binarne:
     - Gender *(Male, Female)* <br>
@@ -46,7 +46,7 @@ Posiada on 38 kolumn:
       ![Treatment distribution](Images/Columns/Treatment.png)
     - Ethnicity *(Caucasian, Hispanic, African American, Asian, Other)* <br>
       ![Ethnicity distribution](Images/Columns/Ethnicity.png)
-    - Insurance_Type *(Medicare, Medicaid, Private, Other)* <br>
+    - Insurance_Type *(Medicare, Medicaid, Private, Other)* {usunięta ze względu różnicy w różnych krajach}<br>
       ![Insurance_Type distribution](Images/Columns/Insurance_Type.png)
     - Performance_Status *(0, 1, 2, 3, 4)* <br>
       ![Performance_Status distribution](Images/Columns/Performance_Status.png)
@@ -123,4 +123,30 @@ tego nie zostało wyświetlone.
 &nbsp; Niestety analiza zautomatyzowanymi narzędziami okazała się niezbyt możliwa, ze względu na niekompatybilność, jak
 i za dużą ilość danych przez które nie można było wygenerować wykresów. <br>
 &nbsp; Efekty które udało się użyskać to informacje o rodzaju danych w kolumnach, brakujących wartościach i rekomendacje
-co do tego co można zrobić z danymi kolumnami.
+co do tego co można zrobić z danymi kolumnami. Jedynymi zmianami zaproponowanymi w czasie tej analizy było usunięcie kolumny
+*Patient_ID*.
+
+#### Aktualizacja
+Udało się uruchomić Sweetviz po zmianie w pliku [***graph_numeric.py***](venv/Lib/site-packages/sweetviz/graph_numeric.py):
+z:
+``` python
+warnings.filterwarnings('ignore', category=np.VisibleDeprecationWarning)
+# ...
+warnings.filterwarnings('once', category=np.VisibleDeprecationWarning)
+```
+na:
+``` python
+warnings.filterwarnings('ignore', category=DeprecationWarning)
+# ...
+warnings.filterwarnings('once', category=DeprecationWarning)
+```
+
+Na początku sprawdziłam cały zbiór danych, a potem porównałam zbiór danych test i train. <br>
+
+**Cały zbiór danych** <br>
+Można zobaczyć brak korelacji i równomierne rozłożenie danych jak i czasami dużą różnorodność danych.
+[Link do strony z wynikami](Data_analyzes/sweetviz_report_full_data.html)<br>
+
+**Porównanie zbioru danych test i train** <br>
+Można zobaczyć, że procentowe rozłożenie danych jest dość wyrównane co powinno dobrze wpłynąć na trenowanie modelu.
+[Link do stront z porównaniem](Data_analyzes/sweetviz_report_test_train_comparison.html)
