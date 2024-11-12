@@ -31,6 +31,13 @@ numeric_columns = df.select_dtypes(include=[np.number]).columns.tolist()
 categorical_columns = df.select_dtypes(exclude=[np.number]).columns.tolist()
 categorical_columns.remove('Treatment')
 
+# Zaokrąglenie danych
+columns = ['Tumor_Size_mm', 'Hemoglobin_Level', 'White_Blood_Cell_Count', 'Platelet_Count', 'Albumin_Level',
+           'Alkaline_Phosphatase_Level', 'Alanine_Aminotransferase_Level', 'Aspartate_Aminotransferase_Level',
+           'Creatinine_Level', 'LDH_Level', 'Calcium_Level', 'Phosphorus_Level', 'Glucose_Level', 'Potassium_Level',
+           'Sodium_Level', 'Smoking_Pack_Years']
+df[columns] = df[columns].round(2)
+
 # Standaryzacja danych
 scaler = StandardScaler()
 df[numeric_columns] = pd.DataFrame(scaler.fit_transform(df[numeric_columns]), columns=numeric_columns, index=df.index)
