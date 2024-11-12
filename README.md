@@ -1,13 +1,14 @@
 # s25241_Lung-Cancer-Prediction
 
+
 ## Wprowadzenie
 **Cel projektu** <br>
-Celem projektu jest przewidzenie najlepszego sposobu leczenia na podstawie podanych informacji o pacjencie. Może to
+&nbsp; Celem projektu jest przewidzenie najlepszego sposobu leczenia na podstawie podanych informacji o pacjencie. Może to
 pomóc lekarzom w wyborze sposobu leczenia i tym samym przyśpieszyć leczenie pacjenta.
 
 ### Informacje i opis zbioru danych danych
 **Informacje o zbiorze danych** <br>
-Zbiór danych nazwywa się [Lung Cancer Prediction](https://www.kaggle.com/datasets/rashadrmammadov/lung-cancer-prediction).
+&nbsp; Zbiór danych nazwywa się [Lung Cancer Prediction](https://www.kaggle.com/datasets/rashadrmammadov/lung-cancer-prediction).
 Wybrałam podany znbiór danych ze względu na to, że posiada kolumnę która określa sposób leczenia oraz jest dostępny do
 użtku publicznego.
 
@@ -103,3 +104,23 @@ i trudność w znalezieniu korelacji. <br>
 ### Wygląd projektu
 Projekt będzie przeprowadznony w poniższy sposób: <br>
 ![Diagram przepływu](Images/Diagram_przeplywu.png)
+
+
+## Efekty analizy danych
+&nbsp; Dokładne efekty działania można zobaczyć w [Analizying_data_set.ipynb](Analizying_data_set.ipynb).
+
+### Własna
+&nbsp; Jak można zobaczyć trzeba było zmienić kolumnę Performance_Status z numerycznej na kategorialną ponieważ ma konkretnie
+5 różnych wartości (kategori) z których można wybrać wartość. Dalej można zobaczyć rozkład wartośćci każdej kolumn które
+zostały przedstwione w formie wykresów. Można na nich zauważyć, że dane są dość równomiernie rozłożone. W dalszej części 
+można też zauważyć wykresy pudełkowe dla wartości numerycznych które wydają się podobne do siebie. Można na nich zobaczyć,
+że minimalna wartość, warość w 1/4, wartość w połowie, wartość w 3/4 i wartość maksymalna są odpowiednio w podbnych odległościach.
+Dalej jest przedstawiona tabela korelacji wartości numerycznych na której można zauważyć, że takich korelacji nie ma. Na
+koniec zostało sprawdzone czy są jakieś wartości brakujące, ale ze względu na to, że takowych wartości nie ma to nic oprócz 
+tego nie zostało wyświetlone.
+
+### Automatyczna
+&nbsp; Niestety analiza zautomatyzowanymi narzędziami okazała się niezbyt możliwa, ze względu na niekompatybilność, jak
+i za dużą ilość danych przez które nie można było wygenerować wykresów. <br>
+&nbsp; Efekty które udało się użyskać to informacje o rodzaju danych w kolumnach, brakujących wartościach i rekomendacje
+co do tego co można zrobić z danymi kolumnami.
