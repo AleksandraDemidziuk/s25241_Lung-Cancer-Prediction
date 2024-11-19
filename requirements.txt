@@ -1,8 +1,8 @@
 kagglehub==0.3.4
-pandas==2.2.3
+pandas~=2.1.4
 scikit-learn==1.5.2
 joblib==1.4.2
-numpy==2.1.3
+numpy~=1.26.4
 jupyter==1.1.1
 seaborn==0.13.2
 matplotlib==3.9.2
@@ -10,3 +10,4 @@ missingno==0.5.2
 autoviz
 sweetviz==2.3.1
 tpot==0.12.2
+airflow
