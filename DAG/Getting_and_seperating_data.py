@@ -63,7 +63,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id="data_processing_dag",
+    dag_id="getting_and_seperating_data_dag",
     default_args=default_args,
     schedule_interval=None,
     start_date=datetime(2023, 11, 1),
