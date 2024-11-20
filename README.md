@@ -191,7 +191,7 @@ F1: 0.2190883897895028 <br>
 ## Praca na daych i budowa modelu w Airflow
 
 Na początku zrobiłam dag testowy który potem próbowałam uruchomić co udało się wykonać. Kod który użyłam w tym dagu zalazłam
-na stronie i po przetestowniu usunełam.
+na stronie.
 
 ### Przygortowanie danych
 

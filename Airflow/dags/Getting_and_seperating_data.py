@@ -15,12 +15,12 @@ def download_data(**kwargs):
     df = pd.read_csv(path)
 
     # Przekazanie do następnego taska
-    kwargs['data'].xcom_push(key='data', value=df)
+    kwargs['ti'].xcom_push(key='data', value=df)
 
 # Funkcja dzieląca dane
 def split_data(**kwargs):
     # Pobranie danych z poprzedniego taska
-    df = kwargs['data'].xcom_pull(task_ids="dowload_data", key="data")
+    df = kwargs['ti'].xcom_pull(task_ids="download_data", key="data")
 
     # Podział danych
     train_data, test_data = train_test_split(df, test_size=0.3, random_state=42)
@@ -39,7 +39,7 @@ def upload_to_gsheets(**kwargs):
 
     # Połączenie z Google Sheets
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = ServiceAccountCredentials.from_json_keyfile_name('"C:/Users/olenk/OneDrive/Pulpit/Szkoła/Semestr 7/ASI/Lab_2/lab-2-s25241-d848cad516a6.json"', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name('/opt/Airflow/keys/lab-2-s25241-d848cad516a6.json', scope)
     client = gspread.authorize(creds)
 
     # Tworzenie nowych arkuszy i wgrywanie danych
@@ -71,7 +71,7 @@ with DAG(
     dag_id="getting_and_seperating_data_dag",
     default_args=default_args,
     schedule_interval=None,
-    start_date=datetime(2023, 11, 1),
+    start_date=datetime(2020, 11, 1),
     catchup=False,
 ) as dag:
 

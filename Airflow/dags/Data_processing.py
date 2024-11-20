@@ -13,7 +13,7 @@ from airflow.operators.python_operator import PythonOperator
 def get_from_gsheets(**kwargs):
     # Połączenie z Google Sheets
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = ServiceAccountCredentials.from_json_keyfile_name('"C:/Users/olenk/OneDrive/Pulpit/Szkoła/Semestr 7/ASI/Lab_2/lab-2-s25241-d848cad516a6.json"', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name('/opt/Airflow/keys/lab-2-s25241-d848cad516a6.json', scope)
     client = gspread.authorize(creds)
 
     # Otworzenie arkusza
@@ -26,13 +26,13 @@ def get_from_gsheets(**kwargs):
     train_data = pd.DataFrame(train_sheet.get_all_records())
 
     # Przekazanie danych dalej
-    kwargs['train_data'].xcom_push(key='train_data', value=train_data)
+    kwargs['ti'].xcom_push(key='train_data', value=train_data)
 
 
 # Funkcja czyszcząca dane
 def cleaning_data(**kwargs):
     # Pobieranie danych z poprzedniego zadania
-    train_data = kwargs['train_data'].xcom_pull(task_ids="get_data_gsheets", key="train_data")
+    train_data = kwargs['ti'].xcom_pull(task_ids="get_data_gsheets", key="train_data")
 
     # Czyszczenie danych
     if train_data.isnull().values.any():
@@ -42,13 +42,13 @@ def cleaning_data(**kwargs):
     train_data_no_duplicates = train_data.drop_duplicates()
 
     # Przekazanie danych do następnego taska
-    kwargs['cleans_train_data'].xcom_push(key='cleans_train_data', value=train_data_no_duplicates)
+    kwargs['ti'].xcom_push(key='cleans_train_data', value=train_data_no_duplicates)
 
 
 # Funkcja normalizująca i standaryzująca dane
 def normalizing_and_standarizning(**kwargs):
     # Pobieranie danych z poprzedniego taska
-    train_data = kwargs['cleans_train_data'].xcom_pull(task_ids="cleaning_data", key="cleans_train_data")
+    train_data = kwargs['ti'].xcom_pull(task_ids="cleaning_data", key="cleans_train_data")
 
     # Przygotowanie do standaryzacji i kategoryzacji
     train_data['Performance_Status'] = train_data['Performance_Status'].astype('category')
@@ -73,18 +73,18 @@ def normalizing_and_standarizning(**kwargs):
         train_data[column] = label_encoder.fit_transform(train_data[column])
 
     # Przekazanie danych do następnego taska
-    kwargs['normalized_train_data'].xcom_push(key='normalized_train_data', value=train_data)
+    kwargs['ti'].xcom_push(key='normalized_train_data', value=train_data)
 
 
 # Funkcja zapisująca dane do Google Sheets
 def upload_to_gsheets(**kwargs):
     # Pobranie danych z poprzedniego taska
-    train_data = kwargs['normalized_train_data'].xcom_pull(task_ids="normalizing_and_standarizning",
-                                                           key="normalized_train_datanormalized_train_data")
+    train_data = kwargs['ti'].xcom_pull(task_ids="normalizing_and_standarizning",
+                                        key="normalized_train_datanormalized_train_data")
 
     # Połączenie z Google Sheets
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = ServiceAccountCredentials.from_json_keyfile_name('"C:/Users/olenk/OneDrive/Pulpit/Szkoła/Semestr 7/ASI/Lab_2/lab-2-s25241-d848cad516a6.json"', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name('/opt/Airflow/keys/lab-2-s25241-d848cad516a6.json', scope)
     client = gspread.authorize(creds)
 
     # Otworzenie arkusza
@@ -111,7 +111,7 @@ with DAG(
     dag_id="data_processing_dag",
     default_args=default_args,
     schedule_interval=None,
-    start_date=datetime(2023, 11, 1),
+    start_date=datetime(2020, 11, 1),
     catchup=False,
 ) as dag:
 
