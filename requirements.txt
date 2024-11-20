@@ -10,4 +10,4 @@ missingno==0.5.2
 autoviz
 sweetviz==2.3.1
 tpot==0.12.2
-airflow
+apache-airflow
