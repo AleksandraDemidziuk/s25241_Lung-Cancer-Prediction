@@ -187,3 +187,20 @@ Wyniki modelu: <br>
 accuracy: 0.2457729468599034 <br>
 precision: 0.2402012891721489 <br>
 F1: 0.2190883897895028 <br>
+
+## Praca na daych i budowa modelu w Airflow
+
+Na początku zrobiłam dag testowy który potem próbowałam uruchomić co udało się wykonać. Kod który użyłam w tym dagu zalazłam
+na stronie i po przetestowniu usunełam.
+
+### Przygortowanie danych
+
+Skrypt znajduje się w [DAG/Getting_and_seperating_data.py](DAG/Getting_and_seperating_data.py). <br>
+Do tworzenia tego skrypty napoczątku uzyskałąm informację o tworzeniu dagów. Potem dostosowałam je do mojego problemu i
+danych. Czego efektem są 3 funkcje i dag, a w nim 3 taski. Po zakończniu pisania zostały sprawdzone wcześniej dodane komentarze.
+
+### Przetwarzanie danych
+
+Skrypt znajduje się w [DAG/Data_processing.py](DAG/Data_processing.py). <br>
+Ten skrypt został wykonany na podstawie *Getting_and_seperating_data.py* i *Cleaning_data_set.py*. Przez co praca nad nim
+była łatwiejsza. Jak w przygotowaniu danych komentarze zostały sprawdzone i poprawione.

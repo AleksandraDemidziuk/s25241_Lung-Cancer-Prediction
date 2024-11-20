@@ -20,15 +20,16 @@ def get_from_gsheets(**kwargs):
     # Popranie konkretnego pod arkusza
     train_sheet = sheet.worksheet("Zbiór modelowy")
 
-    # Pobranie z google sheets
+    # Pobranie danych z arkusza
     train_data = pd.DataFrame(train_sheet.get_all_records())
 
-    # Przekazanie dalej
+    # Przekazanie danych dalej
     kwargs['train_data'].xcom_push(key='train_data', value=train_data)
 
 
+# Funkcja czyszcząca dane
 def cleaning_data(**kwargs):
-    # Pobieranie z XCom
+    # Pobieranie danych z poprzedniego zadania
     train_data = kwargs['train_data'].xcom_pull(task_ids="get_data_gsheets", key="train_data")
 
     # Czyszczenie danych
@@ -38,12 +39,13 @@ def cleaning_data(**kwargs):
     # Usuwanie duplikatów
     train_data_no_duplicates = train_data.drop_duplicates()
 
-    # Przekazanie dalej
+    # Przekazanie danych do następnego taska
     kwargs['cleans_train_data'].xcom_push(key='cleans_train_data', value=train_data_no_duplicates)
 
 
+# Funkcja normalizująca i standaryzująca dane
 def normalizing_and_standarizning(**kwargs):
-    # Pobieranie z XCom
+    # Pobieranie danych z poprzedniego taska
     train_data = kwargs['cleans_train_data'].xcom_pull(task_ids="cleaning_data", key="cleans_train_data")
 
     # Przygotowanie do standaryzacji i kategoryzacji
@@ -68,13 +70,13 @@ def normalizing_and_standarizning(**kwargs):
     for column in categorical_columns:
         train_data[column] = label_encoder.fit_transform(train_data[column])
 
-    # Przekazanie dalej
+    # Przekazanie danych do następnego taska
     kwargs['normalized_train_data'].xcom_push(key='normalized_train_data', value=train_data)
 
 
 # Funkcja zapisująca dane do Google Sheets
 def upload_to_gsheets(**kwargs):
-    # Pobranie z XCom
+    # Pobranie danych z poprzedniego taska
     train_data = kwargs['normalized_train_data'].xcom_pull(task_ids="normalizing_and_standarizning",
                                                            key="normalized_train_datanormalized_train_data")
 
@@ -87,9 +89,12 @@ def upload_to_gsheets(**kwargs):
     sheet = client.open("ASI - Projekt 3")
 
     # Dodanie arkuszy
-    train_sheet = sheet.add_worksheet(title="Przetworzony zbiór modelowy")
+    for worksheet in sheet.worksheets():
+        if worksheet.title == "Przetworzony zbiór modelowy":
+            sheet.del_worksheet(worksheet)
+    train_sheet = sheet.add_worksheet(title="Przetworzony zbiór modelowy", rows=train_data.shape[0], cols=train_data.shape[1])
 
-    # Zapis danych
+    # Zapis danych w google sheets
     train_sheet.update([train_data.columns.values.tolist()] + train_data.values.tolist())
 
 
@@ -136,4 +141,5 @@ with DAG(
         provide_context=True,
     )
 
+    # Ustawienie przebiegu tasków
     task_get_data_from_google_sheets >> task_cleaning_data >> task_normalizing_and_standarizning >> task_upload_to_gsheets

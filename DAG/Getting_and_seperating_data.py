@@ -14,7 +14,7 @@ def download_data(**kwargs):
     path += "\lung_cancer_data.csv"
     df = pd.read_csv(path)
 
-    # Przekazanie dalej
+    # Przekazanie do następnego taska
     kwargs['data'].xcom_push(key='data', value=df)
 
 # Funkcja dzieląca dane
@@ -25,14 +25,14 @@ def split_data(**kwargs):
     # Podział danych
     train_data, test_data = train_test_split(df, test_size=0.3, random_state=42)
 
-    # Przekazanie dalej
+    # Przekazanie do następnego taska
     kwargs['ti'].xcom_push(key='train_data', value=train_data)
     kwargs['ti'].xcom_push(key='test_data', value=test_data)
 
 
 # Funkcja zapisująca dane do Google Sheets
 def upload_to_gsheets(**kwargs):
-    # Pobranie z XCom
+    # Pobranie danych z poprzedniego taska
     ti = kwargs['ti']
     train_data = ti.xcom_pull(task_ids="split_data", key="train_data")
     test_data = ti.xcom_pull(task_ids="split_data", key="test_data")
@@ -46,9 +46,14 @@ def upload_to_gsheets(**kwargs):
     sheet_name = "ASI - Projekt 3"
     sheet = client.create(sheet_name)
 
+    # Usuwanie arkuszy
+    for worksheet in sheet.worksheets():
+        if worksheet.title == "Zbiór modelowy" or worksheet.title == "Zbiór douczeniowy":
+            sheet.del_worksheet(worksheet)
+
     # Dodanie arkuszy
-    train_sheet = sheet.add_worksheet(title="Zbiór modelowy", rows="16561", cols="38")
-    test_sheet = sheet.add_worksheet(title="Zbiór douczeniowy", rows="7097", cols="38")
+    train_sheet = sheet.add_worksheet(title="Zbiór modelowy", rows=train_data.shape[0], cols=train_data.shape[1])
+    test_sheet = sheet.add_worksheet(title="Zbiór douczeniowy", rows=test_data.shape[0], cols=test_data.shape[1])
 
     # Zapis danych
     train_sheet.update([train_data.columns.values.tolist()] + train_data.values.tolist())
@@ -91,4 +96,5 @@ with DAG(
         provide_context=True,
     )
 
+    # Ustawienie przebiegu tasków
     task_download_data >> task_split_data >> task_upload_to_gsheets
