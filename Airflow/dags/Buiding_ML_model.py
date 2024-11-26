@@ -47,7 +47,7 @@ def choosing_and_saving_model(**kwargs):
     test_data = kwargs['ti'].xcom_pull(key='test_data')
 
     # Załadowanie i pryzgotowanie data setu
-    data = get_data(train_data)
+    data = train_data
     s = setup(data, target='Treatment')
 
     # Sprawdzanie modeli
