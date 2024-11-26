@@ -11,3 +11,4 @@ autoviz
 sweetviz==2.3.1
 tpot==0.12.2
 apache-airflow
+pycaret
