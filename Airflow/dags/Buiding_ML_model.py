@@ -54,7 +54,9 @@ def choosing_and_saving_model(**kwargs):
     best = compare_models()
     print(best)
     evaluate_model(best)
-    plot_model(best, plot='auc')
+    if hasattr(best, 'predict_proba'):
+        plot_model(best, plot='auc')
+    
     plot_model(best, plot='confusion_matrix')
     predict_model(best)
 
