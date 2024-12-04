@@ -2,7 +2,6 @@ from oauth2client.service_account import ServiceAccountCredentials
 import gspread
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from pycaret.datasets import get_data
 from pycaret.classification import *
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
@@ -60,7 +59,7 @@ def choosing_and_saving_model(**kwargs):
     plot_model(best, plot='confusion_matrix')
     predict_model(best)
 
-    #
+    # Wyniki modelu
     predictions = predict_model(best, data=test_data, raw_score=True)
     predictions.head()
 
