@@ -274,18 +274,14 @@ uvicorn app.main:app --host 0.0.0.0 --port 5000
 
 Aby pobrać obraz z docker hub należy
 ``` bash
-docker pull s25241/???
+docker pull s25241/lung_cancer_prediction_api
 ```
 
 Uruchomienie obrazu
 ``` bash
-docker run -it s25241/??? "ścieżka_do_pliku"
+docker run -it s25241/lung_cancer_prediction_api "ścieżka_do_pliku"
 ```
 **ścieżka_do_pliku ma być zamieniona na twoją własną.**
-
-*PS <br>
-do obecnego momentu [App.py](App.py) nie działa poprawinie dlatego obraz dockera nie został stworzony, dlatego też jego
-nazwa to ???*
 
 ### Jak testować API przez curl?
 **Pamiętaj żeby można było wykonać testy trzeba na początku zrobić [Jak uruchomić REST API?](#jak-uruchomić-rest-api).**
