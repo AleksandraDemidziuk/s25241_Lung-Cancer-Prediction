@@ -11,8 +11,8 @@ COPY ../ requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Kopiujemy całą aplikację do kontenera
-COPY ../Airflow/models/ /app/Airflow/models/
-COPY ../App.py ./
+COPY Airflow/models /app/Airflow/models/
+COPY App.py ./
 
 # Ustawiamy zmienną środowiskową
 ENV PYTHONUNBUFFERED 1
