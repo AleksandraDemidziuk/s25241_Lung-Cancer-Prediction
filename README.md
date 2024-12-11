@@ -20,7 +20,7 @@
 - [Jak uruchomić?](#jak-uruchomić)
   - [Jak uruchomić Airflow?](#jak-uruchomić-airflow)
   - [Jak uruchomić REST API?](#jak-uruchomić-rest-api)
-  - [Jak uruchomić API przez curl?](#jak-uruchomić-api-przez-curl)
+  - [Jak testować API przez curl?](#jak-testować-api-przez-curl)
 
 ## Wprowadzenie
 **Cel projektu** <br>
@@ -261,4 +261,31 @@ Nie udało mi się znaleźć podanych dagów.*
 
 ### Jak uruchomić REST API?
 
-### Jak uruchomić API przez curl?
+Strona jest dostępna pod adresem http://0.0.0.0:5000/ 
+
+#### Uruchomienie lokalne
+
+``` bash
+uvicorn app.main:app --host 0.0.0.0 --port 5000
+```
+
+#### Uruchomienie przez obraz docker
+
+Aby pobrać obraz z docker hub należy
+``` bash
+docker pull s25241/
+```
+
+Uruchomienie obrazu
+``` bash
+docker run -it s25241/ "ścieżka_do_pliku"
+```
+**ścieżka_do_pliku ma być zamieniona na twoją własną.**
+
+### Jak testować API przez curl?
+**Pamiętaj żeby można było wykonać testy trzeba na początku zrobić [Jak uruchomić REST API?](#jak-uruchomić-rest-api).**
+``` bash
+curl -X POST "http://127.0.0.1:5000/predict" -H "Content-Type: application/json" -d 'dane-w-formacie-json'
+```
+Jeżeli nie macie własnych danych możecie przeprowadzić test przez użycie tych danych 
+[Data_sets/test_json.json](Data_sets/test_json.json).
