@@ -229,25 +229,35 @@ była łatwiejsza. Jak w przygotowaniu danych komentarze zostały sprawdzone i p
 ## Jak uruchomić?
 
 ### Jak uruchomić Airflow?
-Aby pobrać obraz z docker hub należy
-``` bash
-docker pull s25241/asi_s25241
+Pobierz projekt
+```bash
+git clone https://github.com/PJATK-ASI-2024/s25241_Lung-Cancer-Prediction.git
+cd s25241_Lung-Cancer-Prediction/Airflow
 ```
-Uruchomienie docker-compose po raz pierwszy:
+
+Uruchomienie docker-compose **po raz pierwszy**:
 ``` bash
-docker-compose up 
-airflow-init
+docker-compose up airflow-init
 ```
-Uruchomienie docker-compose po raz kolejny:
+Uruchomienie docker-compose **po raz kolejny**:
 ``` bash
 docker-compose up 
 ```
 
 A następnie zaloguj się na stronie: <br>
-Wejdź na http://localhost:8080 w przeglądarce. <br>
+Wejdź na http://localhost:8080 w przeglądarce.
+
 Domyślne dane logowania: <br>
 **Login**: airflow <br>
 **Hasło**: airflow
+
+Po wykonaniu podanych kroków wystarczy znaleźć dagi po id:
+- getting_and_seperating_data_dag
+- data_processing_dag
+- building_ML_model_dag
+
+*PS <br>
+Nie udało mi się znaleźć podanych dagów.*
 
 ### Jak uruchomić REST API?
 
