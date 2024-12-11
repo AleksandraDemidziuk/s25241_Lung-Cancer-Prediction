@@ -1,6 +1,27 @@
 # s25241_Lung-Cancer-Prediction
 
 
+## Spis treści
+- [Wprowadzenie](#wprowadzenie)
+  - [Informacje i opis zbioru danych danych](#informacje-i-opis-zbioru-danych-danych)
+  - [Wygląd projektu](#wygląd-projektu)
+- [Efekty analizy danych](#efekty-analizy-danych)
+  - [Własna](#własna)
+  - [Automatyczna](#automatyczna)
+    - [Aktualizacja](#aktualizacja)
+  - [Podsumowanie analizy](#podsumowanie-analizy)
+- [Modele](#modele)
+  - [Bez zaokrąglenia danych](#bez-zaokrąglenia-danych)
+  - [Z zaokrągleniem danych do 2 miejsca po przecinku](#z-zaokrągleniem-danych-do-2-miejsca-po-przecinku)
+  - [Wybrany model](#wybrany-model)
+- [Praca na daych i budowa modelu w Airflow](#praca-na-daych-i-budowa-modelu-w-airflow)
+  - [Przygortowanie danych](#przygortowanie-danych)
+  - [Przetwarzanie danych](#przetwarzanie-danych)
+- [Jak uruchomić?](#jak-uruchomić)
+  - [Jak uruchomić Airflow?](#jak-uruchomić-airflow)
+  - [Jak uruchomić REST API?](#jak-uruchomić-rest-api)
+  - [Jak uruchomić API przez curl?](#jak-uruchomić-api-przez-curl)
+
 ## Wprowadzenie
 **Cel projektu** <br>
 &nbsp; Celem projektu jest przewidzenie najlepszego sposobu leczenia na podstawie podanych informacji o pacjencie. Może to
@@ -204,3 +225,30 @@ danych. Czego efektem są 3 funkcje i dag, a w nim 3 taski. Po zakończniu pisan
 Skrypt znajduje się w [DAG/Data_processing.py](DAG/Data_processing.py). <br>
 Ten skrypt został wykonany na podstawie *Getting_and_seperating_data.py* i *Cleaning_data_set.py*. Przez co praca nad nim
 była łatwiejsza. Jak w przygotowaniu danych komentarze zostały sprawdzone i poprawione.
+
+## Jak uruchomić?
+
+### Jak uruchomić Airflow?
+Aby pobrać obraz z docker hub należy
+``` bash
+docker pull s25241/asi_s25241
+```
+Uruchomienie docker-compose po raz pierwszy:
+``` bash
+docker-compose up 
+airflow-init
+```
+Uruchomienie docker-compose po raz kolejny:
+``` bash
+docker-compose up 
+```
+
+A następnie zaloguj się na stronie: <br>
+Wejdź na http://localhost:8080 w przeglądarce. <br>
+Domyślne dane logowania: <br>
+**Login**: airflow <br>
+**Hasło**: airflow
+
+### Jak uruchomić REST API?
+
+### Jak uruchomić API przez curl?
