@@ -40,96 +40,96 @@ Posiada on 38 kolumn:
 - Wartości kategorialne:
   - Binarne:
     - Gender *(Male, Female)* <br>
-      ![Gender distribution](Images/First_analyzes/Distribution/Gender.png)
+      ![Gender distribution](Task_1_and_2/Images/First_analyzes/Distribution/Gender.png)
     - Family_History *(Yes, No)* <br>
-      ![Family_History distribution](Images/First_analyzes/Distribution/Family_History.png)
+      ![Family_History distribution](Task_1_and_2/Images/First_analyzes/Distribution/Family_History.png)
     - Comorbidity_Diabetes *(Yes, No)* <br>
-      ![Comorbidity_Diabetes distribution](Images/First_analyzes/Distribution/Comorbidity_Diabetes.png)
+      ![Comorbidity_Diabetes distribution](Task_1_and_2/Images/First_analyzes/Distribution/Comorbidity_Diabetes.png)
     - Comorbidity_Hypertension *(Yes, No)* <br>
-      ![Comorbidity_Hypertension distribution](Images/First_analyzes/Distribution/Comorbidity_Hypertension.png)
+      ![Comorbidity_Hypertension distribution](Task_1_and_2/Images/First_analyzes/Distribution/Comorbidity_Hypertension.png)
     - Comorbidity_Heart_Disease *(Yes, No)* <br>
-      ![Comorbidity_Heart_Disease distribution](Images/First_analyzes/Distribution/Comorbidity_Heart_Disease.png)
+      ![Comorbidity_Heart_Disease distribution](Task_1_and_2/Images/First_analyzes/Distribution/Comorbidity_Heart_Disease.png)
     - Comorbidity_Chronic_Lung_Disease *(Yes, No)* <br>
-      ![Comorbidity_Chronic_Lung_Disease distribution](Images/First_analyzes/Distribution/Comorbidity_Chronic_Lung_Disease.png)
+      ![Comorbidity_Chronic_Lung_Disease distribution](Task_1_and_2/Images/First_analyzes/Distribution/Comorbidity_Chronic_Lung_Disease.png)
     - Comorbidity_Kidney_Disease *(Yes, No)* <br>
-      ![Comorbidity_Kidney_Disease distribution](Images/First_analyzes/Distribution/Comorbidity_Kidney_Disease.png)
+      ![Comorbidity_Kidney_Disease distribution](Task_1_and_2/Images/First_analyzes/Distribution/Comorbidity_Kidney_Disease.png)
     - Comorbidity_Autoimmune_Disease *(Yes, No)* <br>
-      ![Comorbidity_Autoimmune_Disease distribution](Images/First_analyzes/Distribution/Comorbidity_Autoimmune_Disease.png)
+      ![Comorbidity_Autoimmune_Disease distribution](Task_1_and_2/Images/First_analyzes/Distribution/Comorbidity_Autoimmune_Disease.png)
     - Comorbidity_Other *(Yes, No)* <br>
-      ![Comorbidity_Other distribution](Images/First_analyzes/Distribution/Comorbidity_Other.png)
+      ![Comorbidity_Other distribution](Task_1_and_2/Images/First_analyzes/Distribution/Comorbidity_Other.png)
   - Inne:
     - Smoking_History *(Former Smoker, Current Smoker, Never Smoked)* <br>
-      ![Smoking_History](Images/First_analyzes/Distribution/Smoking_History.png)
+      ![Smoking_History](Task_1_and_2/Images/First_analyzes/Distribution/Smoking_History.png)
     - Tumor_Location *(Upper Lobe, Middle Lobe, Lower Lobe)* <br>
-      ![Tumor_Location distribution](Images/First_analyzes/Distribution/Tumor_Location.png)
+      ![Tumor_Location distribution](Task_1_and_2/Images/First_analyzes/Distribution/Tumor_Location.png)
     - Stage *(Stage IV, Stage III, Stage I, Stage II)* <br>
-      ![Stage distribution](Images/First_analyzes/Distribution/Stage.png)
+      ![Stage distribution](Task_1_and_2/Images/First_analyzes/Distribution/Stage.png)
     - **Treatment** *(Radiation Therapy, Surgery, Chemotherapy, Targeted Therapy)* <br>
-      ![Treatment distribution](Images/First_analyzes/Distribution/Treatment.png)
+      ![Treatment distribution](Task_1_and_2/Images/First_analyzes/Distribution/Treatment.png)
     - Ethnicity *(Caucasian, Hispanic, African American, Asian, Other)* <br>
-      ![Ethnicity distribution](Images/First_analyzes/Distribution/Ethnicity.png)
+      ![Ethnicity distribution](Task_1_and_2/Images/First_analyzes/Distribution/Ethnicity.png)
     - Insurance_Type *(Medicare, Medicaid, Private, Other)* {usunięta ze względu różnicy w różnych krajach}<br>
-      ![Insurance_Type distribution](Images/First_analyzes/Distribution/Insurance_Type.png)
+      ![Insurance_Type distribution](Task_1_and_2/Images/First_analyzes/Distribution/Insurance_Type.png)
     - Performance_Status *(0, 1, 2, 3, 4)* <br>
-      ![Performance_Status distribution](Images/First_analyzes/Distribution/Performance_Status.png)
+      ![Performance_Status distribution](Task_1_and_2/Images/First_analyzes/Distribution/Performance_Status.png)
 - Wartości liczbowe:
   - Age *(od 30 do 79)* <br>
-    ![Age distribution](Images/First_analyzes/Distribution/Age.png)
+    ![Age distribution](Task_1_and_2/Images/First_analyzes/Distribution/Age.png)
   - Tumor_Size_mm *(od 10 do 100)* <br>
-    ![Tumor_Size_mm distribution](Images/First_analyzes/Distribution/Tumor_Size_mm.png)
+    ![Tumor_Size_mm distribution](Task_1_and_2/Images/First_analyzes/Distribution/Tumor_Size_mm.png)
   - Survival_Months *(od 1 do 119)* <br>
-    ![Survival_Months distribution](Images/First_analyzes/Distribution/Survival_Months.png)
+    ![Survival_Months distribution](Task_1_and_2/Images/First_analyzes/Distribution/Survival_Months.png)
   - Blood_Pressure_Systolic *(od 90 do 179)* <br>
-    ![Blood_Pressure_Systolic](Images/First_analyzes/Distribution/Blood_Pressure_Systolic.png)
+    ![Blood_Pressure_Systolic](Task_1_and_2/Images/First_analyzes/Distribution/Blood_Pressure_Systolic.png)
   - Blood_Pressure_Diastolic *(od 60 do 109)* <br>
-    ![Blood_Pressure_Diastolic distribution](Images/First_analyzes/Distribution/Blood_Pressure_Diastolic.png)
+    ![Blood_Pressure_Diastolic distribution](Task_1_and_2/Images/First_analyzes/Distribution/Blood_Pressure_Diastolic.png)
   - Blood_Pressure_Pulse *(od 60 do 99)* <br>
-    ![Blood_Pressure_Pulse distribution](Images/First_analyzes/Distribution/Blood_Pressure_Pulse.png)
+    ![Blood_Pressure_Pulse distribution](Task_1_and_2/Images/First_analyzes/Distribution/Blood_Pressure_Pulse.png)
   - Hemoglobin_Level *(od 10 do 18)* <br>
-    ![Hemoglobin_Level distribution](Images/First_analyzes/Distribution/Hemoglobin_Level.png)
+    ![Hemoglobin_Level distribution](Task_1_and_2/Images/First_analyzes/Distribution/Hemoglobin_Level.png)
   - White_Blood_Cell_Count *(od 3,5 do 10)* <br>
-    ![White_Blood_Cell_Count distribution](Images/First_analyzes/Distribution/White_Blood_Cell_Count.png)
+    ![White_Blood_Cell_Count distribution](Task_1_and_2/Images/First_analyzes/Distribution/White_Blood_Cell_Count.png)
   - Platelet_Count *(od 150 d0 450)* <br>
-    ![Platelet_Count distribution](Images/First_analyzes/Distribution/Platelet_Count.png)
+    ![Platelet_Count distribution](Task_1_and_2/Images/First_analyzes/Distribution/Platelet_Count.png)
   - Albumin_Level *(od 3 do 5)* <br>
-    ![Albumin_Level distribution](Images/First_analyzes/Distribution/Albumin_Level.png)
+    ![Albumin_Level distribution](Task_1_and_2/Images/First_analyzes/Distribution/Albumin_Level.png)
   - Alkaline_Phosphatase_Level *(od 30 do 120)* <br>
-    ![Alkaline_Phosphatase_Level distribution](Images/First_analyzes/Distribution/Alkaline_Phosphatase_Level.png)
+    ![Alkaline_Phosphatase_Level distribution](Task_1_and_2/Images/First_analyzes/Distribution/Alkaline_Phosphatase_Level.png)
   - Alanine_Aminotransferase_Level *(od 5 do 40)* <br>
-    ![Alanine_Aminotransferase_Level distribution](Images/First_analyzes/Distribution/Alanine_Aminotransferase_Level.png)
+    ![Alanine_Aminotransferase_Level distribution](Task_1_and_2/Images/First_analyzes/Distribution/Alanine_Aminotransferase_Level.png)
   - Aspartate_Aminotransferase_Level *(od 10 do 50)* <br>
-    ![Aspartate_Aminotransferase_Level distribution](Images/First_analyzes/Distribution/Aspartate_Aminotransferase_Level.png)
+    ![Aspartate_Aminotransferase_Level distribution](Task_1_and_2/Images/First_analyzes/Distribution/Aspartate_Aminotransferase_Level.png)
   - Creatinine_Level *(od 0,5 do 1,5)* <br>
-    ![Creatinine_Level distribution](Images/First_analyzes/Distribution/Creatinine_Level.png)
+    ![Creatinine_Level distribution](Task_1_and_2/Images/First_analyzes/Distribution/Creatinine_Level.png)
   - LDH_Level *(od 100 do 250)* <br>
-    ![LDH_Level distribution](Images/First_analyzes/Distribution/LDH_Level.png)
+    ![LDH_Level distribution](Task_1_and_2/Images/First_analyzes/Distribution/LDH_Level.png)
   - Calcium_Level *(od 6 do 10,5)* <br>
-    ![Calcium_Level distribution](Images/First_analyzes/Distribution/Calcium_Level.png)
+    ![Calcium_Level distribution](Task_1_and_2/Images/First_analyzes/Distribution/Calcium_Level.png)
   - Phosphorus_Level *(od 2,5 do 5)* <br>
-    ![Phosphorus_Level distribution](Images/First_analyzes/Distribution/Phosphorus_Level.png)
+    ![Phosphorus_Level distribution](Task_1_and_2/Images/First_analyzes/Distribution/Phosphorus_Level.png)
   - Glucose_Level *(od 70 do 150)* <br>
-    ![Glucose_Level distribution](Images/First_analyzes/Distribution/Glucose_Level.png)
+    ![Glucose_Level distribution](Task_1_and_2/Images/First_analyzes/Distribution/Glucose_Level.png)
   - Potassium_Level *(od 3,5 do 5)* <br>
-    ![Potassium_Level distribution](Images/First_analyzes/Distribution/Potassium_Level.png)
+    ![Potassium_Level distribution](Task_1_and_2/Images/First_analyzes/Distribution/Potassium_Level.png)
   - Sodium_Level *(od 135 do 145)* <br>
-    ![Sodium_Level distribution](Images/First_analyzes/Distribution/Sodium_Level.png)
+    ![Sodium_Level distribution](Task_1_and_2/Images/First_analyzes/Distribution/Sodium_Level.png)
   - Smoking_Pack_Years *(0.02 do 100)* <br>
-    ![Smoking_Pack_Years distribution](Images/First_analyzes/Distribution/Smoking_Pack_Years.png)
+    ![Smoking_Pack_Years distribution](Task_1_and_2/Images/First_analyzes/Distribution/Smoking_Pack_Years.png)
 
 **Korelacje** <br>
 Przy próbie znalezienia korelacji i przy sprawdzaniu danych zauważyłam, że dane są równo rozłożone co powoduje małą różnicę
 i trudność w znalezieniu korelacji. <br>
-![Korelacja 1?](Images/First_analyzes/Corelations/Korelacje.png) <br>
-![Korelacja 2?](Images/First_analyzes/Corelations/Korelacje2.png) <br>
-![Korelacja 3?](Images/First_analyzes/Corelations/Korelacje3.png)
+![Korelacja 1?](Task_1_and_2/Images/First_analyzes/Corelations/Korelacje.png) <br>
+![Korelacja 2?](Task_1_and_2/Images/First_analyzes/Corelations/Korelacje2.png) <br>
+![Korelacja 3?](Task_1_and_2/Images/First_analyzes/Corelations/Korelacje3.png)
 
 ### Wygląd projektu
 Projekt będzie przeprowadznony w poniższy sposób: <br>
-![Diagram przepływu](Images/Diagram_przeplywu.png)
+![Diagram przepływu](Task_1_and_2/Images/Diagram_przeplywu.png)
 
 
 ## Efekty analizy danych
-&nbsp; Dokładne efekty działania można zobaczyć w [Analizying_data_set.ipynb](Analizying_data_set.ipynb).
+&nbsp; Dokładne efekty działania można zobaczyć w [Analizying_data_set.ipynb](Task_1_and_2/Analizying_data_set.ipynb).
 
 ### Własna
 &nbsp; Jak można zobaczyć trzeba było zmienić kolumnę Performance_Status z numerycznej na kategorialną ponieważ ma konkretnie
@@ -167,11 +167,11 @@ Na początku sprawdziłam cały zbiór danych, a potem porównałam zbiór danyc
 
 **Cały zbiór danych** <br>
 Można zobaczyć brak korelacji i równomierne rozłożenie danych jak i czasami dużą różnorodność danych.
-[Link do strony z wynikami](Data_analyzes/sweetviz_report_full_data.html)<br>
+[Link do strony z wynikami](Task_1_and_2/Data_analyzes/sweetviz_report_full_data.html)<br>
 
 **Porównanie zbioru danych test i train** <br>
 Można zobaczyć, że procentowe rozłożenie danych jest dość wyrównane co powinno dobrze wpłynąć na trenowanie modelu.
-[Link do stront z porównaniem](Data_analyzes/sweetviz_report_test_train_comparison.html)
+[Link do stront z porównaniem](Task_1_and_2/Data_analyzes/sweetviz_report_test_train_comparison.html)
 
 
 ### Podsumowanie analizy
@@ -286,9 +286,9 @@ docker run -it s25241/lung_cancer_prediction_api "ścieżka_do_pliku"
  curl -X 'POST' 'http://127.0.0.1:5000/predict' -H 'accept: application/json' -H 'Content-Type: application/json' -d '@Data_sets/test_json.json'
 ```
 Jeżeli nie macie własnych danych możecie przeprowadzić test przez użycie tych danych 
-[Data_sets/test_json.json](Data_sets/test_json.json).
+[Data_sets/test_json.json](Task_1_and_2/Data_sets/test_json.json).
 
 
 ## Sprawdzenie działania API
 Zostało ono sprawdzone na podaje stronie http://127.0.0.1:5000/docs#/default/predict_predict_post przez wklejenie zawartości
-pliku [test_json.json](Data_sets/test_json.json).
+pliku [test_json.json](Task_1_and_2/Data_sets/test_json.json).
