@@ -52,6 +52,7 @@ def choosing_and_saving_model(**kwargs):
     # Sprawdzanie modeli
     best = compare_models()
     print(best)
+
     evaluate_model(best)
     if hasattr(best, 'predict_proba'):
         plot_model(best, plot='auc')
@@ -63,6 +64,9 @@ def choosing_and_saving_model(**kwargs):
     predictions = predict_model(best, data=test_data, raw_score=True)
     predictions.head()
 
+    f = open("Model_report", mode='w')
+    f.write(str(best) + "\n" + str(evaluate_model(best)) + "\n" + str(predict_model(best)) + "\n" + str(predictions.head()))
+    f.close()
     save_model(best, 'Airflow/models/my_best_pipeline')
 
 
@@ -74,7 +78,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id="building_ML_model_dag",
+    dag_id="4_building_model_dag",
     default_args=default_args,
     schedule_interval=None,
     start_date=datetime(2020, 11, 1),

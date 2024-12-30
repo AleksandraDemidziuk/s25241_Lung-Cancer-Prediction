@@ -68,7 +68,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id="getting_and_seperating_data_dag",
+    dag_id="3_download-public_split_save_dag",
     default_args=default_args,
     schedule_interval=None,
     start_date=datetime(2020, 11, 1),

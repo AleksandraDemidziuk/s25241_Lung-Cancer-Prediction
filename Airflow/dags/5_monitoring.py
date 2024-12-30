@@ -44,7 +44,6 @@ def model_validation(**kwargs):
     predictions = predict_model(model, data=df, raw_score=True)
 
     # Dodawanie informacji
-    accuracy = accuracy.predict
     mail_info = ("Wyniki walidacji modelu:\n"
                  f"Accuracy = {predictions['Accuracy'].iloc[0]}, zaliczony = ")
     if predictions['Accuracy'] >= 0.25:
@@ -141,7 +140,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id="model_validation_and_monitoring",
+    dag_id="5_monitoring_dag",
     default_args=default_args,
     schedule_interval=None,
     start_date=datetime(2020, 11, 1),

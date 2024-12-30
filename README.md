@@ -217,14 +217,14 @@ na stronie.
 
 ### Przygortowanie danych
 
-Skrypt znajduje się w [DAG/Getting_and_seperating_data.py](DAG/Getting_and_seperating_data.py). <br>
+Skrypt znajduje się w [DAG/3_download-public_split_save.py](DAG/3_download-public_split_save.py). <br>
 Do tworzenia tego skrypty napoczątku uzyskałąm informację o tworzeniu dagów. Potem dostosowałam je do mojego problemu i
 danych. Czego efektem są 3 funkcje i dag, a w nim 3 taski. Po zakończniu pisania zostały sprawdzone wcześniej dodane komentarze.
 
 ### Przetwarzanie danych
 
-Skrypt znajduje się w [DAG/Data_processing.py](DAG/Data_processing.py). <br>
-Ten skrypt został wykonany na podstawie *Getting_and_seperating_data.py* i *Cleaning_data_set.py*. Przez co praca nad nim
+Skrypt znajduje się w [DAG/3_download-cloud_clean_standard-normalisate_save.py](DAG/3_download-cloud_clean_standard-normalisate_save.py). <br>
+Ten skrypt został wykonany na podstawie *3_download-public_split_save.py* i *Cleaning_data_set.py*. Przez co praca nad nim
 była łatwiejsza. Jak w przygotowaniu danych komentarze zostały sprawdzone i poprawione.
 
 ## Jak uruchomić?
@@ -256,9 +256,6 @@ Po wykonaniu podanych kroków wystarczy znaleźć dagi po id:
 - getting_and_seperating_data_dag
 - data_processing_dag
 - building_ML_model_dag
-
-*PS <br>
-Nie udało mi się znaleźć podanych dagów.*
 
 ### Jak uruchomić REST API?
 
