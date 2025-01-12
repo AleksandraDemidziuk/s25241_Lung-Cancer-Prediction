@@ -9,17 +9,17 @@ from airflow.operators.python_operator import PythonOperator
 
 # Funkcja tworząca API pobierająca model
 def creat_API(**kwargs):
-
+    print()
 
 
 # Funkcja opakowująca API i modelu w kontener
 def putting_API_and_model_into_contener(**kwargs):
-
+    print()
 
 
 # Funkcja publikująca kontener
 def contener_publication(**kwargs):
-
+    print()
 
 
 # Tworzenie DAG-a
