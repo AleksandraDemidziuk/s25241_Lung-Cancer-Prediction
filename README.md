@@ -253,9 +253,11 @@ Domyślne dane logowania: <br>
 **Hasło**: airflow
 
 Po wykonaniu podanych kroków wystarczy znaleźć dagi po id:
-- getting_and_seperating_data_dag
-- data_processing_dag
-- building_ML_model_dag
+- 3_download-cloud_clean_standard-normalisate_save_dag
+- 3_download-public_split_save_dag
+- 4_building_model_dag
+- 5_monitoring_dag
+- 6_contenerysation_and_api_dag
 
 ### Jak uruchomić REST API?
 
@@ -283,12 +285,12 @@ docker run -it s25241/lung_cancer_prediction_api "ścieżka_do_pliku"
 ### Jak testować API przez curl?
 **Pamiętaj żeby można było wykonać testy trzeba na początku zrobić [Jak uruchomić REST API?](#jak-uruchomić-rest-api).**
 ``` bash
- curl -X 'POST' 'http://127.0.0.1:5000/predict' -H 'accept: application/json' -H 'Content-Type: application/json' -d '@Data_sets/test_json.json'
+ curl -X 'POST' 'http://127.0.0.1:5000/predict' -H 'accept: application/json' -H 'Content-Type: application/json' -d '@test_json.json'
 ```
 Jeżeli nie macie własnych danych możecie przeprowadzić test przez użycie tych danych 
-[Data_sets/test_json.json](Task_1_and_2/Data_sets/test_json.json).
+[Data_sets/test_json.json](test_json.json).
 
 
 ## Sprawdzenie działania API
 Zostało ono sprawdzone na podaje stronie http://127.0.0.1:5000/docs#/default/predict_predict_post przez wklejenie zawartości
-pliku [test_json.json](Task_1_and_2/Data_sets/test_json.json).
+pliku [test_json.json](test_json.json).

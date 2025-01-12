@@ -1,25 +1,36 @@
 from datetime import timedelta, datetime
-
-import pandas as pd
-from oauth2client.service_account import ServiceAccountCredentials
-import numpy as np
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
+import subprocess
 
 
 # Funkcja tworząca API pobierająca model
-def creat_API(**kwargs):
-    print()
+def creat_API():
+    print("Skryp tworzący API zanjduje się pod nazwą 'App.py'.")
 
 
 # Funkcja opakowująca API i modelu w kontener
-def putting_API_and_model_into_contener(**kwargs):
-    print()
+def putting_API_and_model_into_contener():
+    try:
+        # Tworzenie obrazu
+        subprocess.run(["docker", "build", "-t", "s25241/lung_cancer_prediction_api", "."], check=True)
+        print("Docker image built successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error building Docker image: {e}")
 
 
 # Funkcja publikująca kontener
-def contener_publication(**kwargs):
-    print()
+def contener_publication():
+    try:
+        # Logowanie się do dockera
+        subprocess.run(["docker", "login"], check=True)
+
+        # Publikacja obrazu
+        subprocess.run(["docker", "push", "s25241/lung_cancer_prediction_api"], check=True)
+
+        print(f"Docker image pushed successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error occurred: {e}")
 
 
 # Tworzenie DAG-a
@@ -53,7 +64,7 @@ with DAG(
 
     # Task: Publikująca kontener
     task_contener_publication = PythonOperator(
-        task_id="normalizing_and_standarizning",
+        task_id="contener_publication",
         python_callable=contener_publication,
         provide_context=True,
     )
