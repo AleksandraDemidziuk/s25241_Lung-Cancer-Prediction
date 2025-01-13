@@ -11,8 +11,8 @@ COPY requirements_for_docker.txt .
 RUN pip install --no-cache-dir -r requirements_for_docker.txt
 
 # Kopiujemy całą aplikację do kontenera
-COPY Airflow/models /app/models/
-COPY Airflow/App.py /app/
+COPY ../models /app/models/
+COPY App.py /app/
 
 # Ustawiamy zmienną środowiskową
 ENV PYTHONUNBUFFERED 1

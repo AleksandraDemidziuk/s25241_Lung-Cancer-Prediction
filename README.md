@@ -288,9 +288,9 @@ docker run -it s25241/lung_cancer_prediction_api "ścieżka_do_pliku"
  curl -X 'POST' 'http://127.0.0.1:5000/predict' -H 'accept: application/json' -H 'Content-Type: application/json' -d '@test_json.json'
 ```
 Jeżeli nie macie własnych danych możecie przeprowadzić test przez użycie tych danych 
-[Data_sets/test_json.json](test_json.json).
+[Data_sets/test_json.json](Airflow/Thinks_for_task_6/test_json.json).
 
 
 ## Sprawdzenie działania API
 Zostało ono sprawdzone na podaje stronie http://127.0.0.1:5000/docs#/default/predict_predict_post przez wklejenie zawartości
-pliku [test_json.json](test_json.json).
+pliku [test_json.json](Airflow/Thinks_for_task_6/test_json.json).
