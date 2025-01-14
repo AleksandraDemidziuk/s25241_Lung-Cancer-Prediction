@@ -13,7 +13,9 @@ def creat_API():
 def putting_API_and_model_into_contener():
     try:
         # Tworzenie obrazu
-        subprocess.run(["docker", "build", "-t", "s25241/lung_cancer_prediction_api", "."], check=True)
+        dockerfile_path = "Airflow/Thinks_for_task_6/Dockerfile"
+        context_path = "Airflow/Thinks_for_task_6"
+        subprocess.run(["docker", "build", "-t", "s25241/lung_cancer_prediction_api", "-f", dockerfile_path, context_path], check=True)
         print("Docker image built successfully.")
     except subprocess.CalledProcessError as e:
         print(f"Error building Docker image: {e}")
