@@ -1,5 +1,5 @@
 # s25241_Lung-Cancer-Prediction
-To jest kopia publiczna moejgo repozytorium należącego do GitHub organizacji akdameickiej. Kopia została zrobiona w celu zaprezentowania moich umiętności w dziedzinie MlOps i Data Science
+To jest kopia publiczna moejgo repozytorium należącego do GitHub organizacji akdameickiej. Kopia została zrobiona w celu zaprezentowania moich umiętności w dziedzinie MlOps i Data Science, a także podalszych eksperymentów w tym kierunku.
 
 ## Wprowadzenie
 **Cel projektu** <br>
